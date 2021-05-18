@@ -21,3 +21,20 @@
 	cursor: pointer;
 	text-align: center;
 }
+
+.paginator {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.paginator div {
+	margin: 25px;
+}
+.paginator .disabled {
+	cursor: not-allowed;
+	color: rgb(179, 179, 179);
+}
+.paginator .active {
+	cursor: pointer;
+}

@@ -1,7 +1,21 @@
 import Navbar from "../components/Navbar";
 import styles from "../styles/eom.module.css";
 
-export function Eom({ employee }) {
+export const getServerSideProps = async (pageContext) => {
+	const apiResponse = await fetch(
+		"https://my-json-server.typicode.com/portexe/next-news/employeeOfTheMonth"
+	);
+
+	const employee = await apiResponse.json();
+
+	return {
+		props: {
+			employee,
+		},
+	};
+};
+
+function Eom({ employee }) {
 	return (
 		<div className="page-container">
 			<Navbar />
@@ -17,19 +31,5 @@ export function Eom({ employee }) {
 		</div>
 	);
 }
-
-export const getServerSideProps = async (pageContext) => {
-	const apiResponse = await fetch(
-		"https://my-json-server.typicode.com/portexe/next-news/employeeOfTheMonth"
-	);
-
-	const employee = await apiResponse.json();
-
-	return {
-		props: {
-			employee,
-		},
-	};
-};
 
 export default Eom;
