@@ -38,3 +38,9 @@
 .paginator .active {
 	cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+	.post {
+		width: 300px;
+	}
+}

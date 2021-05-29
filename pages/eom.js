@@ -2,6 +2,8 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import styles from "../styles/eom.module.css";
 
+import Image from "next/image";
+
 export const getServerSideProps = async (pageContext) => {
 	const apiResponse = await fetch(
 		"https://my-json-server.typicode.com/portexe/next-news/employeeOfTheMonth"
@@ -32,10 +34,10 @@ function Eom({ employee }) {
 					<h1>Employee of the Month</h1>
 				</div>
 				<div className={styles.eom}>
-					<h3>{employee.name}</h3>
-					<h6>{employee.position}</h6>
-					<img src={employee.image} />
-					<p>{employee.description}</p>
+					<h3>Alvin Acosta</h3>
+					<h6>Full Stack Developer</h6>
+					<Image src={"/pogi.jpg"} width={100} height={120} />
+					<p>Dev Guy and Gamer</p>
 				</div>
 			</div>
 		</>
